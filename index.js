@@ -22,6 +22,10 @@ io.on('connection', socket => {
     io.in(roomId).emit(NEW_CHAT_MESSAGE_EVENT, data);
   });
 
+  socket.on('typing', function (data) {
+    socket.broadcast.emit('typing', data);
+  });
+
   socket.on('disconnect', () => {
     // eslint-disable-next-line no-console
     console.log(`Client ${socket.id} disconnected!`);
