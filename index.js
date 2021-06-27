@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 const server = require('http').createServer();
 const io = require('socket.io')(server, {
   cors: {
-    origin: 'https://fork-chat.vercel.app/',
+    origin: 'https://fork-chat.vercel.app',
   },
 });
 
